@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   siteName: string;
+  @Output() pageSelected = new EventEmitter<string>();
 
   constructor() {
     this.siteName = 'Angular in action';
@@ -15,4 +16,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelect(page: string) {
+    this.pageSelected.emit(page);
+  }
 }
