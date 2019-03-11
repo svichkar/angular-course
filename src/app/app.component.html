@@ -1,9 +1,8 @@
-<app-header (pageSelected)="onNavigate($event)"></app-header>
+<app-header></app-header>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <app-shopping-list *ngIf="loadedPage === 'shop'"></app-shopping-list>
-      <app-recipe-book *ngIf="loadedPage === 'recipe'"></app-recipe-book>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
